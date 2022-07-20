@@ -31,3 +31,14 @@ let resetBtn = document.querySelector(".resetButton")
             box.style.backgroundColor = ''
         })
     })
+
+function resizeBox() {
+    //ask for size
+    size = parseInt(prompt("Enter size of grid!"));
+    //remove boxes
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+    };
+    //make new box
+    
+}

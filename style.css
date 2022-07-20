@@ -1,9 +1,17 @@
 .box {
     border: 1px black solid;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
 }
 
 .container {
     display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+body,
+html {
+    height: 100%;
 }

@@ -4,4 +4,6 @@
     height: 10px;
 }
 
-.
+.container {
+    display: flex;
+}

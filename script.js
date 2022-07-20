@@ -5,7 +5,10 @@ const container = document.querySelector(".container");
 
 createContainer()
 
+
+// box creation fxn
 function createContainer() {
+    //initilisation column
     let row = document.createElement("div");
     row.classList.add('row');
     container.appendChild(row);
@@ -20,12 +23,13 @@ function createContainer() {
         let row = document.querySelector(".row");
         container.appendChild(row.cloneNode(true));
     }
-
+    //add hover event toeverybox for every new box created
     addHoverEvent();
     // return boxnode so that becomes global and updates for every new box
     return boxNodeList = document.querySelectorAll(".box")
 }
 
+//the hover fxn
 function addHoverEvent() {
     let boxNodeList = document.querySelectorAll(".box")
 

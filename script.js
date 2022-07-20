@@ -9,3 +9,8 @@ for (i = 0; i <= size-1; i++) {
     let div = document.createElement("div");
     row.appendChild(div);
 }
+
+for (i = 0; i <= size-2; i++) {
+    let row = document.querySelector(".row");
+    container.appendChild(row.cloneNode(true));
+}

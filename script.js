@@ -22,6 +22,7 @@ function createContainer() {
     }
 
     addHoverEvent();
+    // return boxnode so that becomes global and updates for every new box
     return boxNodeList = document.querySelectorAll(".box")
 }
 
@@ -34,9 +35,25 @@ function addHoverEvent() {
         })
     });
 }
+
+// the reset fxn
+let resetBtn = document.querySelector(".resetButton")
+resetBtn.addEventListener('click', resetBox)
+function resetBox() {
+    boxNodeList.forEach(box => {
+    box.style.backgroundColor = ''})
+    }
+
+//the resize fxn
+let sizeBtn = document.querySelector(".sizeButton")
+sizeBtn.addEventListener('click', resizeBox)
 function resizeBox() {
     //ask for size
     size = parseInt(prompt("Enter size of grid!"));
+    if (size > 64) {
+        alert('too big :0');
+        return;
+    }
     //remove boxes
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
@@ -44,13 +61,7 @@ function resizeBox() {
     //make new box
     return createContainer();
 }
+    
 
-let resetBtn = document.querySelector(".resetButton")
 
-function resetBox() {
-    boxNodeList.forEach(box => {
-    box.style.backgroundColor = ''})
-    }
-
-resetBtn.addEventListener('click', resetBox)
 

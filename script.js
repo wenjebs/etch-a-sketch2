@@ -7,6 +7,7 @@ container.appendChild(row);
 
 for (i = 0; i <= size-1; i++) {
     let div = document.createElement("div");
+    div.classList.add('box');
     row.appendChild(div);
 }
 

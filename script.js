@@ -46,5 +46,9 @@ function resizeBox() {
         container.removeChild(container.firstChild);
     };
     //make new box
-
+    createContainer();
 }
+
+let sizeBtn = document.querySelector(".sizeButton")
+
+sizeBtn.addEventListener('click', resizeBox());

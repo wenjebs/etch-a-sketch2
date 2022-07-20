@@ -1,14 +1,15 @@
 let size = 16;
 
 const container = document.querySelector(".container");
-let row = document.createElement("div");
-row.classList.add('row');
-container.appendChild(row);
 
 
 createContainer()
 
 function createContainer() {
+    let row = document.createElement("div");
+    row.classList.add('row');
+    container.appendChild(row);
+
     for (i = 0; i <= size-1; i++) {
         let div = document.createElement("div");
         div.classList.add('box');
@@ -19,24 +20,28 @@ function createContainer() {
         let row = document.querySelector(".row");
         container.appendChild(row.cloneNode(true));
     }
+
+    addHoverEvent();
 }
 
+function addHoverEvent() {
+    let boxNodeList = document.querySelectorAll(".box")
+
+    boxNodeList.forEach(box => {
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'yellow'
+        })
+    });
+}
 
 let boxNodeList = document.querySelectorAll(".box")
-
-boxNodeList.forEach(box => {
-    box.addEventListener('mouseover', () => {
-        box.style.backgroundColor = 'yellow'
-    })
-});
-
 let resetBtn = document.querySelector(".resetButton")
     
-    resetBtn.addEventListener('click', () => {
-        boxNodeList.forEach(box => {
-            box.style.backgroundColor = ''
-        })
+resetBtn.addEventListener('click', () => {
+    boxNodeList.forEach(box => {
+        box.style.backgroundColor = ''
     })
+})
 
 function resizeBox() {
     //ask for size
@@ -49,6 +54,3 @@ function resizeBox() {
     createContainer();
 }
 
-let sizeBtn = document.querySelector(".sizeButton")
-
-sizeBtn.addEventListener('click', resizeBox());

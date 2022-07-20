@@ -5,16 +5,22 @@ let row = document.createElement("div");
 row.classList.add('row');
 container.appendChild(row);
 
-for (i = 0; i <= size-1; i++) {
-    let div = document.createElement("div");
-    div.classList.add('box');
-    row.appendChild(div);
+
+createContainer()
+
+function createContainer() {
+    for (i = 0; i <= size-1; i++) {
+        let div = document.createElement("div");
+        div.classList.add('box');
+        row.appendChild(div);
+    }
+    
+    for (i = 0; i <= size-2; i++) {
+        let row = document.querySelector(".row");
+        container.appendChild(row.cloneNode(true));
+    }
 }
 
-for (i = 0; i <= size-2; i++) {
-    let row = document.querySelector(".row");
-    container.appendChild(row.cloneNode(true));
-}
 
 let boxNodeList = document.querySelectorAll(".box")
 
@@ -40,5 +46,5 @@ function resizeBox() {
         container.removeChild(container.firstChild);
     };
     //make new box
-    
+
 }

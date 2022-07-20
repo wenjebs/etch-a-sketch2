@@ -23,3 +23,11 @@ boxNodeList.forEach(box => {
         box.style.backgroundColor = 'yellow'
     })
 });
+
+let resetBtn = document.querySelector(".resetButton")
+    
+    resetBtn.addEventListener('click', () => {
+        boxNodeList.forEach(box => {
+            box.style.backgroundColor = ''
+        })
+    })

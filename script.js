@@ -15,3 +15,11 @@ for (i = 0; i <= size-2; i++) {
     let row = document.querySelector(".row");
     container.appendChild(row.cloneNode(true));
 }
+
+let boxNodeList = document.querySelectorAll(".box")
+
+boxNodeList.forEach(box => {
+    box.addEventListener('mouseover', () => {
+        box.style.backgroundColor = 'yellow'
+    })
+});

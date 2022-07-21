@@ -1,5 +1,5 @@
 let size = 16;
-
+let randomRgb = 0;
 const container = document.querySelector(".container");
 container.setAttribute('draggable',false);
 
@@ -18,6 +18,8 @@ function createContainer() {
     for (i = 0; i <= size-1; i++) {
         let div = document.createElement("div");
         div.classList.add('box');
+        div.style.width = `${800/size - 1}px`;
+        div.style.height = `${800/size - 1}px`;
         div.setAttribute('draggable',false);
         row.appendChild(div);
     }
@@ -40,16 +42,16 @@ function addHoverEvent() {
     boxNodeList.forEach(box => {
         //mousedown means cfm over the box
         box.addEventListener('mousedown', () => {
-            box.style.backgroundColor = 'black'
+            box.style.backgroundColor = `rgb(${randomRgbNumber()},${randomRgbNumber()},${randomRgbNumber()})`
         }),   
         // incase got drag for now cause idk how remove
         box.addEventListener('dragover', () => {
-            box.style.backgroundColor = 'black'
+            box.style.backgroundColor = `rgb(${randomRgbNumber()},${randomRgbNumber()},${randomRgbNumber()})`
         })
         //  mouseover + check if the left mouse button is clciked
         box.addEventListener('mouseover', (event) => {
             if (event.buttons == 1) {
-                event.target.style.backgroundColor = 'black'
+                event.target.style.backgroundColor = `rgb(${randomRgbNumber()},${randomRgbNumber()},${randomRgbNumber()})`
             }
         });
     })
@@ -83,4 +85,8 @@ function resizeBox() {
     
 
 
-
+//random rgb number fxn
+function randomRgbNumber() {
+    randomRgb = Math.floor(Math.random() * 256);
+    return randomRgb;
+}

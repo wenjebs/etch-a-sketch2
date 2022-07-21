@@ -1,5 +1,6 @@
 .box {
-    border: 1px black solid;
+    border-top: 1px black solid;
+    border-right: 1px black solid;
     width: 30px;
     height: 30px;
 }
@@ -7,11 +8,20 @@
 .container {
     display: flex;
     justify-content: center;
-    height: 100%;
     align-items: center;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
 }
 
 body,
 html {
     height: 100%;
+}
+
+.buttons {
+    text-align: center;
+    margin: 2em;
 }
